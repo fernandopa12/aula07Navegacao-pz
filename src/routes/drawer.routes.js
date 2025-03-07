@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import StackRoutes from './stack.routes';
 import TabRoutes from "./tab.routes";
 
 const Drawer = createDrawerNavigator()
@@ -18,6 +19,13 @@ export default function DrawerRoutes() {
                 options={{
                     drawerIcon: () => <Feather name='log-in' size={20} />,
                     drawerLabel: "Login"
+                }}
+            />
+
+            <Drawer.Screen name='perfil' component={StackRoutes}
+                options={{
+                    drawerIcon: () => <Feather name='user' size={20} />,
+                    drawerLabel: "Perfil"
                 }}
             />
         </Drawer.Navigator>
